@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/style.css">
+        <title>CRUDS</title>
+    </head>
+    <body>
+        
+        <!-- Start Header -->
+        <header class="header container d-flex justify-content-around align-items-center pb-2 pt-3">
+            <div class="info">
+                <h1 id="crud-head" class="fw-bold">Library</h1>
+            </div>
+            <img id="theme-icon" src="images/sun.png" />
+        </header>
+        <!-- End Header -->
+
+        <!-- Start Insertions Section -->
+        <section class="insertions pt-4 pb-4">
+            <div class="container">
+                <input class="input w-100" type="text" placeholder="Title" id="title">
+                <div class="price">
+                        <input onkeyup="totalCount()" class="input col-lg-5" type="number" id="price" placeholder="price">
+                        <input onkeyup="totalCount()" class="input col-lg-5" type="number" id="discount" placeholder="discount">
+                        <span onkeyup="totalCount()" class="col-lg-2" id="total"></span>
+                </div>
+                <div class="cLetter">
+                    <input class="input w-100" type="number" id="count" placeholder="count">
+                    <input class="input w-100" type="text" id="category" placeholder="category">
+                    <button class="generalBtn w-50 container d-flex justify-content-center align-items-center" id="submit">Create</button>
+                </div>
+            </div>
+        </section>
+        <!-- End Insertions Section -->
+
+        <!-- start The Outputs Section -->
+        <section class="outputs pt-5 pb-5">
+            <div class="search container">
+                <input class="input" onkeyup="searchForDetails(this.value)" type="text" id="search" placeholder="Search">
+                <button onclick="theSearchMood(this.id)" class="generalBtn" id="searchByTitle">Search By Title</button>
+                <button onclick="theSearchMood(this.id)" class="generalBtn" id="searchByCategory">Search By Category</button>
+            </div>
+
+            <table class="container w-100 text-center mt-5">
+                <tr>
+                    <th>num</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th>category</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+
+                <tbody id="forTable">
+                    
+                </tbody>
+            </table>
+        </section>
+        <!-- End The Outputs Section -->
+        
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
